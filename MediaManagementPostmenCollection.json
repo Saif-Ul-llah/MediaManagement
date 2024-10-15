@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "35aa5377-5df6-4eba-8e0b-e853afe807e0",
+		"name": "Interviewer-Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26185174",
+		"_collection_link": "https://dark-crescent-69454.postman.co/workspace/Team-Workspace~3ac8d413-78f5-4bf1-8055-cb060ceddc65/collection/26185174-35aa5377-5df6-4eba-8e0b-e853afe807e0?action=share&source=collection_link&creator=26185174"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"User1\",\r\n     \"email\":\"user1@gamil.com\",\r\n     \"password\":\"user123\",\r\n     \"role\":\"admin\"//admin,crown,user\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/signUp",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"user1@gamil.com\",\r\n    \"password\":\"!user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/signIn",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Media",
+			"item": [
+				{
+					"name": "Upload-media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mediaFiles",
+									"type": "file",
+									"src": "/C:/Users/HAJI LAPTOP/Downloads/dp.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/upload-media",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"upload-media"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MediaByUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/MediaByUser?page=1&limit=10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"MediaByUser"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSpecificMedia",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/Media/670c356d906b29cb2c100268",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Media",
+								"670c356d906b29cb2c100268"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMediaByID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/DeleteMedia/670c3578906b29cb2c10026f",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"DeleteMedia",
+								"670c3578906b29cb2c10026f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UpgradeAccount",
+			"item": [
+				{
+					"name": "UpgradeAccount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/UpgradeAccount",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"UpgradeAccount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "token",
+			"value": "your-default-token-value"
+		}
+	]
+}
